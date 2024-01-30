@@ -18,10 +18,20 @@ namespace DobruskyCapitalLLC.MVC.Controllers
             return View();
         }
 
+        public IActionResult Indicators()
+        {
+            return View();
+        }
+        public IActionResult FAQ()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -2,7 +2,43 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Landing Page Section -->
+<!-- TODO Make background image full screen. Maybe take a picture of the trading setup and put a black overlay on it -->
+<section class="text-center bg-dark text-white p-5">
+    <div class="container">
+        <h1 class="display-4">Are you ready to level up your trading?</h1>
+        <a href="#about" class="btn btn-primary">Lets go</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="p-5">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Here you can talk about your journey, your business, and what makes you unique in the trading world.</p>
+    </div>
+</section>
+
+<!-- Indicators Section -->
+<section class="bg-light p-5">
+    <div class="container">
+        <h2>Indicators</h2>
+        <p>Brief information about the indicators you've developed, how they work, and their future availability.</p>
+    </div>
+</section>
+
+<!-- Trading Journal and Free Education Section -->
+<section class="p-5">
+    <div class="container">
+        <h2>Trading Journal</h2>
+        <p>Explain the benefits of your trading journal and the free educational content you provide. Mention how signing up for the email list provides exclusive access or insights.</p>
+        <!-- Email Sign-Up Form -->
+        <form>
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</section>
