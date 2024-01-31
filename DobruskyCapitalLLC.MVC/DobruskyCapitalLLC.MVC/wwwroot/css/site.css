@@ -16,3 +16,39 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.indicator-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.indicator-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.indicator-image {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+}
+
+.indicator-description {
+    width: 45%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .indicator-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .indicator-image, .indicator-description {
+        width: 100%;
+    }
+}

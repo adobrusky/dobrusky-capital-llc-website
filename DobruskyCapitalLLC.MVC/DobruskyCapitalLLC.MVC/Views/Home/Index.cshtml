@@ -15,15 +15,65 @@
 <section id="about" class="p-5">
     <div class="container">
         <h2>About Us</h2>
-        <p>Here you can talk about your journey, your business, and what makes you unique in the trading world.</p>
+        <p>
+            Dobrusky Capital LLC, headquartered in Lincoln, Nebraska, is a day trading company founded in 2023 by Austin Dobrusky.
+            Our primary focus is on trading derivative securities of the S&P 500, specifically options and futures contracts.
+            Our approach is data-driven and grounded in understanding the fundamental dynamics of the market to make informed intraday trading decisions. We rely on our strengths in analyzing volume and price action data, coupled with market sentiment, to take calculated risks when opportunities present themselves.
+            In addition to trading, Austin brings over 8 years of experience in software development. 
+            We have applied this expertise to our trading strategies, developing three proprietary trading indicators that have become a cornerstone of our daily operations at Dobrusky Capital LLC.
+        </p>
+        <p>
+            Beyond our trading activities, our mission is to provide as much value as possible to growing traders. 
+            Understanding the difficulty of day trading, we are committed to sharing knowledge and resources to help others succeed in their trading journey. 
+            This commitment is demonstrated through the free education we offer and the release of the "Dobrusky Capital LLC 90-Day Trading Journal," a tool designed to help traders continuously improve their trading skills and mindset.
+            This meticulously structured trading journal, used daily at Dobrusky Capital LLC, has been instrumental in enhancing the company's consistency and performance.
+        </p>
     </div>
 </section>
 
+
 <!-- Indicators Section -->
-<section class="bg-light p-5">
+<section id="indicators" class="bg-light p-5">
     <div class="container">
-        <h2>Indicators</h2>
-        <p>Brief information about the indicators you've developed, how they work, and their future availability.</p>
+        <h2>Our Trading Indicators</h2>
+        <p>
+            We have developed three proprietary trading indicators for TradingView. These indicators are not designed to dictate when to enter or exit trades; rather, they provide fast and reliable information that may be missed otherwise. 
+            This information can often make the difference between a winning and losing trade. You still need to know how to read the market; all that our indicators do is increase the speed at which you can read it.
+            These indicators are stable and are currently undergoing testing in our daily trade operations at Dobrusky Capital LLC.
+            They are not yet available for purchase but will be released as soon as the testing phase is complete.
+        </p>
+
+
+        <!-- Indicator 1 -->
+        <div class="indicator-row">
+            <img src="@Url.Content("~/images/volumeprofile.png")" alt="Volume Profile Indicator" class="indicator-image">
+            <div class="indicator-description">
+                <h3>Volume Profile</h3>
+                <p>This indicator displays a volume profile (volume by price) that shows both cumulative volume and buy/sell pressure.</p>
+            </div>
+        </div>
+
+        <!-- Indicator 2 -->
+        <div class="indicator-row">
+            <div class="indicator-description">
+                <h3>Buy/Sell Volume Bars</h3>
+                <p>This indicator displays buy/sell volume bars (volume by time). 
+                    It features two customizable metrics to gauge a baseline volume. The indicator offers a simple moving average as well as a proprietary "baseline" metric.
+                    The baseline during the regular market session will only be calculated using regular market session data and vice versa for extended hours. 
+                    This method of calculation provides a more accurate baseline volume than the simple moving average.</p>
+            </div>
+            <img src="@Url.Content("~/images/volumebars.png")" alt="Buy/Sell Volume Bars Indicator" class="indicator-image">
+        </div>
+
+        <!-- Indicator 3 -->
+        <div class="indicator-row">
+            <img src="@Url.Content("~/images/vpaindicator.png")" alt="Volume Price Analysis Indicator" class="indicator-image">
+            <div class="indicator-description">
+                <h3>VPA Indicator</h3>
+                <p>Inspired by the teachings in Anna Coulling's book "Volume Price Analysis", this indicator is designed to assist traders in identifying valuable volume price analysis (VPA) information on price charts. 
+                    This indicator highlights important candlesticks, volume conditions, and price levels that can provide insights into potential market structure and direction.</p>
+            </div>
+        </div>
     </div>
 </section>
 
