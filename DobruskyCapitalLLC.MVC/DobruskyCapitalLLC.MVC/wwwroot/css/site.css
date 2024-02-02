@@ -41,6 +41,35 @@ body {
     width: 45%;
 }
 
+#navbar {
+    margin-bottom: 0px !important;
+}
+
+.landing-section {
+    height: 100vh; /* Make section full height of the viewport */
+    background-size: cover; /* Cover the full section */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Parallax effect */
+    position: relative; /* For overlay positioning */
+    background-image: url('../images/tradingsetup.jpg');
+}
+
+.landing-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Black overlay with 50% opacity */
+}
+
+.container {
+    position: relative; /* Ensure text and button are above the overlay */
+    z-index: 1; /* Above the ::before pseudo-element */
+}
+
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .indicator-row {
@@ -52,3 +81,4 @@ body {
         width: 100%;
     }
 }
+
