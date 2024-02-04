@@ -1,0 +1,116 @@
+// Define color variables
+$navbar-background: rgba(0, 0, 0, 0.4);
+$navbar-border: rgba(246, 134, 51, 1);
+$navbar-scrolled-background: rgba(33, 37, 41, 1);
+$navbar-scrolled-border: rgba(33, 37, 41, 1);
+$section-overlay-background: rgba(0, 0, 0, 0.8);
+
+// Base styles for mobile devices
+html {
+    font-size: 14px; // Smaller font size for mobile
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+.indicator-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    flex-direction: column; // Stack elements vertically on mobile
+    text-align: center; // Center text for mobile
+
+    &.indicator-image, &.indicator-description {
+        width: 100%; // Adjust width for medium screens
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row; // Default direction for larger screens
+        text-align: left; // Align text to the left for larger screens
+    }
+
+    @media (min-width: 425px) {
+        &.indicator-image, &.indicator-description {
+            width: 75%; // Adjust width for medium screens
+        }
+    }
+}
+
+.indicator-image, .indicator-description {
+    width: 100%; // Full width for mobile
+    margin-top: 10px;
+    text-align: justify;
+
+    @media (min-width: 768px) {
+        width: 50%; // Adjust width for larger screens
+        max-width: 450px; // Apply max width to image
+    }
+}
+
+#navbar {
+    margin-bottom: 0 !important;
+    padding: 0px 15px 0px 15px !important;
+    background-color: $navbar-background !important;
+    // Use box-shadow instead of border-bottom for a transition effect
+    box-shadow: 0 1px 0 0 $navbar-border !important;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; // Smooth transition for background and box-shadow
+
+    &.scrolled-navbar {
+        background-color: $navbar-scrolled-background !important;
+        // Adjust box-shadow color to simulate border-bottom color transition
+        box-shadow: 0 0px 0 0 black !important;
+    }
+
+    .navbar-collapse, .navbar-brand {
+        font-weight: 550;
+        font-size: 16px; // Adjust font size for mobile
+
+        @media (min-width: 768px) {
+            font-size: 18px; // Larger font size for larger screens
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding: 0% 10% 0% 10% !important;
+    }
+}
+
+
+.landing-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    background-image: url('../images/tradingsetup.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $section-overlay-background;
+    }
+
+    a {
+        margin-top: 5vh;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}

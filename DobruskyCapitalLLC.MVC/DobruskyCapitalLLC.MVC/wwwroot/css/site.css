@@ -1,112 +1,103 @@
-html {
+﻿html {
   font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-    margin-bottom: 60px;
-    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  margin-bottom: 60px;
+  font-family: "Calibri", Arial, Helvetica, sans-serif;
 }
 
 .indicator-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  flex-direction: column;
+  text-align: center;
+}
+.indicator-row.indicator-image, .indicator-row.indicator-description {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .indicator-row {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+@media (min-width: 425px) {
+  .indicator-row.indicator-image, .indicator-row.indicator-description {
+    width: 75%;
+  }
 }
 
-.indicator-row:nth-child(even) {
-    flex-direction: row-reverse;
+.indicator-image, .indicator-description {
+  width: 100%;
+  margin-top: 10px;
+  text-align: justify;
 }
-
-.indicator-image {
+@media (min-width: 768px) {
+  .indicator-image, .indicator-description {
     width: 50%;
-    max-width: 300px;
-    height: auto;
-}
-
-.indicator-description {
-    width: 45%;
+    max-width: 450px;
+  }
 }
 
 #navbar {
-    margin-bottom: 0px !important;
-    padding: 0px 10% 0px 10%;
-    background-color: rgba(0, 0, 0, 0.4) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+  margin-bottom: 0 !important;
+  padding: 0px 15px 0px 15px !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 1px 0 0 rgb(246, 134, 51) !important;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
-
-#navbar .navbar-collapse, #navbar .navbar-brand {
-    font-weight: 550;
-}
-
 #navbar.scrolled-navbar {
-    background-color: rgba(33, 37, 41, 1) !important;
-    border-bottom: 1px solid rgba(246, 134, 51, 1) !important;
+  background-color: rgb(33, 37, 41) !important;
+  box-shadow: 0 0px 0 0 black !important;
+}
+#navbar .navbar-collapse, #navbar .navbar-brand {
+  font-weight: 550;
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  #navbar .navbar-collapse, #navbar .navbar-brand {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  #navbar {
+    padding: 0% 10% 0% 10% !important;
+  }
 }
 
 .landing-section {
-    height: 100vh; /* Make section full height of the viewport */
-    background-size: cover; /* Cover the full section */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Parallax effect */
-    position: relative; /* For overlay positioning */
-    background-image: url('../images/tradingsetup.jpg');
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  background-image: url("../images/tradingsetup.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.landing-section a {
-    margin-top: 5vh;
-}
-
 .landing-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8); /* Black overlay with 50% opacity */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.landing-section a {
+  margin-top: 5vh;
 }
 
 .container {
-    position: relative; /* Ensure text and button are above the overlay */
-    z-index: 1; /* Above the ::before pseudo-element */
+  position: relative;
+  z-index: 1;
 }
-
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .indicator-row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #navbar {
-        padding: 0px 15px 0px 15px;
-    }
-
-    #navbar .navbar-collapse {
-        font-size: 16px;
-    }
-
-    .indicator-image, .indicator-description {
-        width: 100%;
-    }
-}
-
