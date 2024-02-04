@@ -14,7 +14,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
 }
 
 .indicator-row {
@@ -43,6 +44,18 @@ body {
 
 #navbar {
     margin-bottom: 0px !important;
+    padding: 0px 10% 0px 10%;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+}
+
+#navbar .navbar-collapse, #navbar .navbar-brand {
+    font-weight: 550;
+}
+
+#navbar.scrolled-navbar {
+    background-color: rgba(33, 37, 41, 1) !important;
+    border-bottom: 1px solid rgba(246, 134, 51, 1) !important;
 }
 
 .landing-section {
@@ -52,6 +65,13 @@ body {
     background-attachment: fixed; /* Parallax effect */
     position: relative; /* For overlay positioning */
     background-image: url('../images/tradingsetup.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-section a {
+    margin-top: 5vh;
 }
 
 .landing-section::before {
@@ -75,6 +95,14 @@ body {
     .indicator-row {
         flex-direction: column;
         text-align: center;
+    }
+
+    #navbar {
+        padding: 0px 15px 0px 15px;
+    }
+
+    #navbar .navbar-collapse {
+        font-size: 16px;
     }
 
     .indicator-image, .indicator-description {
