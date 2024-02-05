@@ -22,8 +22,4 @@
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
-  </ItemGroup>
-
 </Project>
