@@ -60,6 +60,7 @@ body {
     padding: 0px 15px 0px 15px !important;
     background-color: $navbar-background !important;
     // Use box-shadow instead of border-bottom for a transition effect
+    border-bottom: 2px solid white !important;
     box-shadow: 0 1px 0 0 $navbar-border !important;
     transition: background-color 0.5s ease, box-shadow 0.5s ease; // Smooth transition for background and box-shadow
 

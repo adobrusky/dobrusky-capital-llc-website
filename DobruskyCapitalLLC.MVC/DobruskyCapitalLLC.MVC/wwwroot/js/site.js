@@ -1,4 +1,6 @@
 ﻿$(document).ready(function () {
+    let lastScrollTop = 0; // Keep track of the last scroll position
+
     // Function to check if an element is in the viewport
     function isElementInView($elem) {
         let docViewTop = $(window).scrollTop();
@@ -30,18 +32,32 @@
 
     // Animate elements that are already in view on load
     animateElements();
-
-    // Bind scroll event to wi
-
+    let st = $(this).scrollTop();
+    if (st > lastScrollTop) {
+        // Scrolling Down
+        $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
+    } else {
+        // Scrolling Up
+        $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
+    }
     // Listen for scroll events on the window object
     $(window).scroll(function () {
         animateElements();
-        // Check if the page is scrolled down more than 0 pixels
+
+        let st = $(this).scrollTop() + 1;
+        if (st > lastScrollTop){
+            // Scrolling Down
+            $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
+        } else {
+            // Scrolling Up
+            $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
+        }
+        lastScrollTop = st;
+
+        // Scrolled navbar logic
         if ($(this).scrollTop() > 0) {
-            // If scrolled down, add the .scrolled-navbar class to the navbar
             $('#navbar').addClass('scrolled-navbar');
         } else {
-            // If scrolled to the top, remove the .scrolled-navbar class from the navbar
             $('#navbar').removeClass('scrolled-navbar');
         }
     });
