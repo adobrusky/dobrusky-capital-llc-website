@@ -1,6 +1,9 @@
 ﻿$(document).ready(function () {
     let lastScrollTop = 0; // Keep track of the last scroll position
 
+    // Fade in body
+    $('body').css('opacity', 1);
+
     // Function to check if an element is in the viewport
     function isElementInView($elem) {
         let docViewTop = $(window).scrollTop();
@@ -30,27 +33,16 @@
         });
     }
 
-    // Animate elements that are already in view on load
-    animateElements();
-    let st = $(this).scrollTop();
-    if (st > lastScrollTop) {
-        // Scrolling Down
-        $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
-    } else {
-        // Scrolling Up
-        $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
-    }
-    // Listen for scroll events on the window object
-    $(window).scroll(function () {
+    function scrollLogic() {
         animateElements();
 
         let st = $(this).scrollTop() + 1;
-        if (st > lastScrollTop){
+        if (st > lastScrollTop) {
             // Scrolling Down
-            $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
+            $('.landing-section').css('background-position', `0px ${st * -0.1}px`);
         } else {
             // Scrolling Up
-            $('.landing-section').css('background-position', `0px ${st * -0.05}px`);
+            $('.landing-section').css('background-position', `0px ${st * -0.1}px`);
         }
         lastScrollTop = st;
 
@@ -60,5 +52,10 @@
         } else {
             $('#navbar').removeClass('scrolled-navbar');
         }
+    }
+    scrollLogic();
+    // Listen for scroll events on the window object
+    $(window).scroll(function () {
+        scrollLogic();
     });
 });

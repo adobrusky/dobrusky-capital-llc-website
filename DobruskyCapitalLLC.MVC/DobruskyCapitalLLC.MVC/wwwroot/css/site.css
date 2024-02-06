@@ -7,6 +7,8 @@
 body {
   margin-bottom: 60px;
   font-family: "Calibri", Arial, Helvetica, sans-serif;
+  opacity: 0;
+  transition: opacity ease 0.5s;
 }
 
 .indicator-row {
@@ -17,7 +19,7 @@ body {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  flex-direction: column;
+  flex-direction: column-reverse;
   text-align: center;
 }
 .indicator-row.indicator-image, .indicator-row.indicator-description {
@@ -27,6 +29,9 @@ body {
   .indicator-row {
     flex-direction: row;
     text-align: left;
+  }
+  .indicator-row .indicator-description {
+    margin-left: 5% !important;
   }
 }
 @media (min-width: 425px) {
@@ -51,7 +56,7 @@ body {
   margin-bottom: 0 !important;
   padding: 0px 15px 0px 15px !important;
   background-color: rgba(0, 0, 0, 0.4) !important;
-  border-bottom: 2px solid white !important;
+  border-bottom: 1px solid white !important;
   box-shadow: 0 1px 0 0 rgb(246, 134, 51) !important;
   transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
@@ -60,12 +65,12 @@ body {
   box-shadow: 0 0px 0 0 black !important;
 }
 #navbar .navbar-collapse, #navbar .navbar-brand {
-  font-weight: 550;
+  font-weight: 600;
   font-size: 16px;
 }
 @media (min-width: 768px) {
   #navbar .navbar-collapse, #navbar .navbar-brand {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 @media (min-width: 768px) {
@@ -98,9 +103,14 @@ body {
   margin-top: 5vh;
 }
 
-.container {
+.p-5 > .container {
   position: relative;
   z-index: 1;
+}
+@media (min-width: 1068px) {
+  .p-5 > .container {
+    padding: 0px 10% 0px 10%;
+  }
 }
 
 .navbar-toggler .navbar-toggler-icon {
