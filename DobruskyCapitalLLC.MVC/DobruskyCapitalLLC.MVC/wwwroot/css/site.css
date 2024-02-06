@@ -102,6 +102,9 @@ body {
 .landing-section a {
   margin-top: 5vh;
 }
+.landing-section .container {
+  z-index: 1;
+}
 
 .p-5 > .container {
   position: relative;

@@ -39,10 +39,10 @@
         let st = $(this).scrollTop() + 1;
         if (st > lastScrollTop) {
             // Scrolling Down
-            $('.landing-section').css('background-position', `0px ${st * -0.1}px`);
+            $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
         } else {
             // Scrolling Up
-            $('.landing-section').css('background-position', `0px ${st * -0.1}px`);
+            $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
         }
         lastScrollTop = st;
 

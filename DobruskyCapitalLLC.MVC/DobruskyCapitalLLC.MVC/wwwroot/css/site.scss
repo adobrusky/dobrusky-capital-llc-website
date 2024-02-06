@@ -114,6 +114,10 @@ body {
     a {
         margin-top: 5vh;
     }
+
+    .container {
+        z-index: 1;
+    }
 }
 
 .p-5 > .container {
