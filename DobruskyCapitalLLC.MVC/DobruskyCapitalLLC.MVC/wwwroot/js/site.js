@@ -54,7 +54,6 @@
         }
     }
     scrollLogic();
-    // Listen for scroll events on the window object
     $(window).scroll(function () {
         scrollLogic();
     });

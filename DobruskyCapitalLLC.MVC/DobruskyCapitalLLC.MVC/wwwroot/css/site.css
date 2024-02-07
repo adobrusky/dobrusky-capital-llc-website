@@ -56,13 +56,13 @@ body {
   margin-bottom: 0 !important;
   padding: 0px 15px 0px 15px !important;
   background-color: rgba(0, 0, 0, 0.4) !important;
-  border-bottom: 1px solid white !important;
-  box-shadow: 0 1px 0 0 rgb(246, 134, 51) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0px 0 0 white !important;
   transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 #navbar.scrolled-navbar {
   background-color: rgb(33, 37, 41) !important;
-  box-shadow: 0 0px 0 0 black !important;
+  box-shadow: 0 1px 0 0 white !important;
 }
 #navbar .navbar-collapse, #navbar .navbar-brand {
   font-weight: 600;
@@ -77,6 +77,25 @@ body {
   #navbar {
     padding: 0% 10% 0% 10% !important;
   }
+}
+#navbar .navbar-nav .nav-item .nav-link {
+  position: relative;
+}
+#navbar .navbar-nav .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.5s ease;
+}
+#navbar .navbar-nav .nav-item .nav-link:hover:after, #navbar .navbar-nav .nav-item .nav-link:focus:after, #navbar .navbar-nav .nav-item .nav-link.active:after {
+  width: 100%;
+}
+#navbar .navbar-nav .nav-item .nav-link.active:after {
+  background-color: rgb(246, 134, 51);
 }
 
 .landing-section {

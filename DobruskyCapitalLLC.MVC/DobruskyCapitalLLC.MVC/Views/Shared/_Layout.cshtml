@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using DobruskyCapitalLLC.MVC.Helpers;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,7 +15,7 @@
     <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="@Url.Content("~/images/logo2t.png")" alt="Brand Logo" style="height: 70px; margin-right: 10px; background-color:transparent;">
+                <img src="@Url.Content("~/images/logo.png")" alt="Brand Logo" style="height: 70px; margin-right: 10px; background-color:transparent;">
                 Dobrusky Capital LLC
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -23,16 +25,16 @@
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                 <ul class="navbar-nav flex-grow-1 justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-light @Html.IsActive("Home", "Index")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Indicators">Indicators</a>
+                            <a class="nav-link text-light @Html.IsActive("Home", "Indicators")" asp-area="" asp-controller="Home" asp-action="Indicators">Indicators</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" target="_blank" href="https://www.amazon.com/Dobrusky-Capital-90-Day-Trading-Journal/dp/B0CPY3FJ39">Journal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                        <a class="nav-link text-light @Html.IsActive("Home", "FAQ")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
                     </li>
                 </ul>
             </div>

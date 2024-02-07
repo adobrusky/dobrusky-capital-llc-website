@@ -64,30 +64,52 @@ body {
     margin-bottom: 0 !important;
     padding: 0px 15px 0px 15px !important;
     background-color: $navbar-background !important;
-    // Use box-shadow instead of border-bottom for a transition effect
-    border-bottom: 1px solid white !important;
-    box-shadow: 0 1px 0 0 $navbar-border !important;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease; // Smooth transition for background and box-shadow
+    border-bottom: 1px solid $navbar-background !important;
+    box-shadow: 0 0px 0 0 white !important;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 
     &.scrolled-navbar {
         background-color: $navbar-scrolled-background !important;
-        // Adjust box-shadow color to simulate border-bottom color transition
-        box-shadow: 0 0px 0 0 black !important;
+        box-shadow: 0 1px 0 0 white !important;
     }
 
     .navbar-collapse, .navbar-brand {
         font-weight: 600;
-        font-size: 16px; // Adjust font size for mobile
+        font-size: 16px;
 
         @media (min-width: 768px) {
-            font-size: 17px; // Larger font size for larger screens
+            font-size: 17px;
         }
     }
 
     @media (min-width: 768px) {
         padding: 0% 10% 0% 10% !important;
     }
+    // Specific selectors for navbar links to include the sliding underline effect
+    .navbar-nav .nav-item .nav-link {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; // Adjust this value based on your navbar's specific styling
+            left: 0;
+            width: 0%;
+            height: 2px; // Height of the underline
+            background-color: #fff; // Color of the underline, adjust as needed
+            transition: width 0.5s ease; // Animation timing
+        }
+
+        &:hover:after, &:focus:after, &.active:after {
+            width: 100%; // Full width on hover/focus, creating the sliding effect
+        }
+
+        &.active:after {
+            background-color: $navbar-border;
+        }
+    }
 }
+
 
 
 .landing-section {
