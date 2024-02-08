@@ -57,4 +57,21 @@
     $(window).scroll(function () {
         scrollLogic();
     });
+
+    // When the link with href="#about" is clicked
+    $('a[href="#about"]').click(function (e) {
+        // Prevent the default action of the anchor
+        e.preventDefault();
+
+        // Calculate the position of the start of the #about section
+        var aboutPosition = $('#about').offset().top;
+
+        // Get the height of the navbar
+        var navbarHeight = $('.navbar').outerHeight();
+
+        // Scroll to the #about section, adjusting for the navbar height
+        $('html, body').animate({
+            scrollTop: aboutPosition - navbarHeight
+        }, 1000);
+    });
 });
