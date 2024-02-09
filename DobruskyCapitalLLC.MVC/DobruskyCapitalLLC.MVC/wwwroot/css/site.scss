@@ -1,8 +1,7 @@
 // Define color variables
-$navbar-background: rgba(0, 0, 0, 0.4);
-$navbar-border: rgba(246, 134, 51, 1);
-$navbar-scrolled-background: rgba(33, 37, 41, 1);
-$navbar-scrolled-border: rgba(33, 37, 41, 1);
+$translucent-black: rgba(0, 0, 0, 0.4);
+$orange: rgba(246, 134, 51, 1);
+$dark-gray: rgba(33, 37, 41, 1);
 $section-overlay-background: rgba(0, 0, 0, 0.8);
 
 // Base styles for mobile devices
@@ -63,13 +62,13 @@ body {
 #navbar {
     margin-bottom: 0 !important;
     padding: 0px 15px 0px 15px !important;
-    background-color: $navbar-background !important;
-    border-bottom: 1px solid $navbar-background !important;
+    background-color: $translucent-black !important;
+    border-bottom: 1px solid $translucent-black !important;
     box-shadow: 0 0px 0 0 white !important;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 
     &.scrolled-navbar {
-        background-color: $navbar-scrolled-background !important;
+        background-color: $dark-gray !important;
         box-shadow: 0 1px 0 0 white !important;
     }
 
@@ -105,7 +104,7 @@ body {
         }
 
         &.active:after {
-            background-color: $navbar-border;
+            background-color: $orange;
         }
     }
 }
@@ -146,7 +145,7 @@ body {
 
         &:hover, &:focus {
             background-color: white;
-            color: $navbar-border;
+            color: $orange;
             border: 1px solid white;
         }
 
