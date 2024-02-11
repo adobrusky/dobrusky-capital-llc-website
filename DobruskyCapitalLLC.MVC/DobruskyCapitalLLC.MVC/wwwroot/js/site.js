@@ -34,23 +34,25 @@
     }
 
     function scrollLogic() {
-        animateElements();
+        if (isHome) {
+            animateElements();
 
-        let st = $(this).scrollTop() + 1;
-        if (st > lastScrollTop) {
-            // Scrolling Down
-            $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
-        } else {
-            // Scrolling Up
-            $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
-        }
-        lastScrollTop = st;
+            let st = $(this).scrollTop() + 1;
+            if (st > lastScrollTop) {
+                // Scrolling Down
+                $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
+            } else {
+                // Scrolling Up
+                $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
+            }
+            lastScrollTop = st;
 
-        // Scrolled navbar logic
-        if ($(this).scrollTop() > 0) {
-            $('#navbar').addClass('scrolled-navbar');
-        } else {
-            $('#navbar').removeClass('scrolled-navbar');
+            // Scrolled navbar logic
+            if ($(this).scrollTop() > 0 && !$('#navbar').hasClass('.scrolled-navbar')) {
+                $('#navbar').addClass('scrolled-navbar');
+            } else {
+                $('#navbar').removeClass('scrolled-navbar');
+            }
         }
     }
     scrollLogic();
@@ -59,19 +61,16 @@
     });
 
     // When the link with href="#about" is clicked
-    $('a[href="#about"]').click(function (e) {
-        // Prevent the default action of the anchor
-        e.preventDefault();
-
+    $('#landing-page a').click(function (e) {
         // Calculate the position of the start of the #about section
-        var aboutPosition = $('#about').offset().top;
+        let aboutPosition = $('#about').offset().top;
 
         // Get the height of the navbar
-        var navbarHeight = $('.navbar').outerHeight();
+        let navbarHeight = $('.navbar').outerHeight();
 
         // Scroll to the #about section, adjusting for the navbar height
-        $('html, body').animate({
+        $('html, body').stop().animate({
             scrollTop: aboutPosition - navbarHeight
-        }, 1000);
+        }, 0, 'swing');
     });
 });
