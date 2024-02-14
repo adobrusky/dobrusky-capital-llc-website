@@ -4,9 +4,8 @@ $orange: rgba(246, 134, 51, 1);
 $dark-gray: rgba(33, 37, 41, 1);
 $section-overlay-background: rgba(0, 0, 0, 0.8);
 
-// Base styles for mobile devices
 html {
-    font-size: 14px; // Smaller font size for mobile
+    font-size: 14px;
     position: relative;
     min-height: 100%;
 }
@@ -26,36 +25,36 @@ body {
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    flex-direction: column-reverse; // Stack elements vertically on mobile
-    text-align: center; // Center text for mobile
+    flex-direction: column-reverse;
+    text-align: center;
 
     &.indicator-image, &.indicator-description {
-        width: 100%; // Adjust width for medium screens
+        width: 100%;
     }
 
     @media (min-width: 768px) {
-        flex-direction: row; // Default direction for larger screens
-        text-align: left; // Align text to the left for larger screens
+        flex-direction: row;
+        text-align: left;
         .indicator-description {
-            margin-left: 5% !important; // Adjust width for medium screens
+            margin-left: 5% !important;
         }
     }
 
     @media (min-width: 425px) {
         &.indicator-image, &.indicator-description {
-            width: 75%; // Adjust width for medium screens
+            width: 75%;
         }
     }
 }
 
 .indicator-image, .indicator-description {
-    width: 100%; // Full width for mobile
+    width: 100%;
     margin-top: 10px;
     text-align: justify;
 
     @media (min-width: 768px) {
-        width: 50%; // Adjust width for larger screens
-        max-width: 450px; // Apply max width to image
+        width: 50%;
+        max-width: 400px;
     }
 }
 
@@ -73,7 +72,6 @@ body {
     }
 
     .navbar-collapse, .navbar-brand {
-        font-weight: 600;
         font-size: 16px;
 
         @media (min-width: 768px) {
@@ -81,26 +79,30 @@ body {
         }
     }
 
+    .navbar-brand {
+        font-weight: 600;
+    }
+
     @media (min-width: 768px) {
         padding: 0% 10% 0% 10% !important;
     }
-    // Specific selectors for navbar links to include the sliding underline effect
+
     .navbar-nav .nav-item .nav-link {
         position: relative;
 
         &::after {
             content: '';
             position: absolute;
-            bottom: -5px; // Adjust this value based on your navbar's specific styling
+            bottom: -5px;
             left: 0;
             width: 0%;
-            height: 2px; // Height of the underline
-            background-color: #fff; // Color of the underline, adjust as needed
-            transition: width 0.5s ease; // Animation timing
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.5s ease;
         }
 
         &:hover:after, &:focus:after, &.active:after {
-            width: 100%; // Full width on hover/focus, creating the sliding effect
+            width: 100%;
         }
 
         &.active:after {
@@ -108,8 +110,6 @@ body {
         }
     }
 }
-
-
 
 .landing-section {
     height: 100vh;
@@ -171,5 +171,35 @@ body {
 .navbar-toggler {
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}
+
+section {
+    h2 {
+        font-weight: 600;
+    }
+
+    .container p {
+       font-size: 16px;
+    }
+}
+
+.journal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    img {
+        max-height: 500px;
+        width: auto;
+        box-shadow: 2px 2px 10px $dark-gray;
+    }
+
+    @media (min-width: 768px) {
+        justify-content: space-around;
+        flex-direction: row;
+
+        img {
+            margin-left: 30px;
+        }
     }
 }
