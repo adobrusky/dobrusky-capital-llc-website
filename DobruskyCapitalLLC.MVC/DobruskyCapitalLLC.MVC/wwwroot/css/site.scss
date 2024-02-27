@@ -211,3 +211,60 @@ section {
         }
     }
 }
+
+.email-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-label {
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input, .btn {
+            border-radius: 999px 999px;
+            width: 350px;
+            font-size: 15px;
+            height: 40px;
+        }
+
+        .btn.btn-primary {
+            width: 150px;
+            margin-top: 10px;
+            font-weight: 600;
+            background-color: $orange;
+            color: white;
+            border: 1px solid $orange;
+            transition: color ease .5s, background-color ease .5s;
+
+            &:hover, &:focus {
+                background-color: white;
+                color: $orange;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            justify-content: space-around;
+            flex-direction: row;
+
+            .btn.btn-primary {
+                margin-top: 0px;
+            }
+
+            input {
+                margin-right: 20px;
+            }
+        }
+    }
+}

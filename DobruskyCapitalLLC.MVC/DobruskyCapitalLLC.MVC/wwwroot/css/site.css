@@ -188,3 +188,53 @@ section .container p {
     margin-left: 30px;
   }
 }
+
+.email-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.email-signup .form-label {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}
+.email-signup div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.email-signup div input, .email-signup div .btn {
+  border-radius: 999px 999px;
+  width: 350px;
+  font-size: 15px;
+  height: 40px;
+}
+.email-signup div .btn.btn-primary {
+  width: 150px;
+  margin-top: 10px;
+  font-weight: 600;
+  background-color: rgb(246, 134, 51);
+  color: white;
+  border: 1px solid rgb(246, 134, 51);
+  transition: color ease 0.5s, background-color ease 0.5s;
+}
+.email-signup div .btn.btn-primary:hover, .email-signup div .btn.btn-primary:focus {
+  background-color: white;
+  color: rgb(246, 134, 51);
+}
+.email-signup div .btn.btn-primary:focus {
+  outline: none !important;
+}
+@media (min-width: 768px) {
+  .email-signup div {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .email-signup div .btn.btn-primary {
+    margin-top: 0px;
+  }
+  .email-signup div input {
+    margin-right: 20px;
+  }
+}
