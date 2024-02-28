@@ -48,11 +48,33 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer bg-dark text-light py-3">
         <div class="container">
-            &copy; 2024 - Dobrusky Capital LLC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="@Url.Content("~/images/logo.png")" alt="Dobrusky Capital LLC Logo" class="footer-logo">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a class="footer-link" style="text-decoration:none;" href="mailto:dobruskycapital@gmail.com" target="_blank">dobruskycapital@gmail.com</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <hr />
+            <div class="text-center mt-4">
+                &copy; 2024 - Dobrusky Capital LLC - <a class="footer-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+            </div>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/767d71e18a.js" crossorigin="anonymous"></script>

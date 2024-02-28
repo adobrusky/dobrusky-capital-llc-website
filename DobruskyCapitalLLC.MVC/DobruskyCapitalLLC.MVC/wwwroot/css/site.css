@@ -5,7 +5,6 @@
 }
 
 body {
-  margin-bottom: 60px;
   font-family: "Calibri", Arial, Helvetica, sans-serif;
   opacity: 0;
   transition: opacity ease 0.5s;
@@ -206,7 +205,7 @@ section .container p {
 }
 .email-signup div input, .email-signup div .btn {
   border-radius: 999px 999px;
-  width: 350px;
+  width: 300px;
   font-size: 15px;
   height: 40px;
 }
@@ -236,5 +235,37 @@ section .container p {
   }
   .email-signup div input {
     margin-right: 20px;
+    width: 350px;
   }
+}
+
+.footer {
+  background-color: rgb(33, 37, 41);
+  color: white;
+  line-height: initial !important;
+  justify-content: space-around !important;
+  position: relative !important;
+}
+.footer hr {
+  color: white;
+  height: 2px;
+  border-radius: 10px 10px;
+  margin: 25px 0px 25px 0px;
+}
+.footer a.footer-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer a.footer-link:hover {
+  color: rgb(246, 134, 51);
+}
+.footer .footer-logo {
+  max-height: 50px;
+  margin-bottom: 0.5rem;
+}
+.footer .col-md-4 {
+  text-align: center;
+}
+.footer .text-light i {
+  font-size: 16px;
 }
