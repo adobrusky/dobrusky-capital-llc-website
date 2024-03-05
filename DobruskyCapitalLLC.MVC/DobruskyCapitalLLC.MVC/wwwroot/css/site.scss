@@ -310,3 +310,27 @@ section {
         font-size: 16px;
     }
 }
+
+.indicator-page-section > .container > div {
+    display: flex;
+
+    .indicator-purchase-btn {
+        width: 150px;
+        margin-top: 10px;
+        font-weight: 600;
+        background-color: $orange;
+        color: white;
+        border: 1px solid $orange;
+        transition: color ease .5s, background-color ease .5s;
+        cursor: not-allowed;
+
+        &:hover, &:focus {
+            background-color: white;
+            color: $orange;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+}

@@ -1,9 +1,13 @@
 ﻿$(document).ready(function () {
     let lastScrollTop = 0;
+    isHome = !(typeof(isHome) == 'undefined');
 
     $('body').css('opacity', 1);
 
-    // Check if an element is in the viewport
+    if (!isHome) {
+        $('body').css('padding-top', $('.navbar').outerHeight());
+    }
+
     function isElementInView($elem) {
         let docViewTop = $(window).scrollTop();
         let docViewBottom = docViewTop + $(window).height();
@@ -11,7 +15,6 @@
         return (elemTop <= docViewBottom);
     }
 
-    // Animate indicator elements when they come into viewport
     function animateElements() {
         $('.indicator-row').each(function (index) {
             let $ind = $(this);
@@ -19,7 +22,6 @@
             // Calculate a delay based on the element's index to stagger the animations
             let delay = index * 100;
 
-            // Check if the element is in the viewport and hasn't been animated yet
             if (isElementInView($ind) && !$ind.hasClass('animated')) {
                 setTimeout(function () {
                     $ind.css({
@@ -35,6 +37,7 @@
         if (isHome) {
             animateElements();
 
+            // Landing page parallax
             let st = $(this).scrollTop() + 1;
             if (st > lastScrollTop) {
                 $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
@@ -43,6 +46,7 @@
             }
             lastScrollTop = st;
 
+            // Adjust home page navbar background color
             if ($(this).scrollTop() > 0 && !$('#navbar').hasClass('.scrolled-navbar')) {
                 $('#navbar').addClass('scrolled-navbar');
             } else {
@@ -59,7 +63,7 @@
         let aboutPosition = $('#about').offset().top;
         let navbarHeight = $('.navbar').outerHeight();
 
-        // Scroll to the #about section, adjusting for the navbar height
+        // Scroll to the #about section adjusting for the navbar height
         $('html, body').stop().animate({
             scrollTop: aboutPosition - navbarHeight
         }, 0, 'swing');
