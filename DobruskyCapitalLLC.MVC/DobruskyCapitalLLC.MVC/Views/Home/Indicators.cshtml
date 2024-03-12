@@ -24,8 +24,6 @@
     </div>
 </section>
 
-
-
 <!-- Volume Bars Section -->
 <section class="bg-light p-5 indicator-page-section">
     <div class="container">
@@ -33,7 +31,18 @@
         <div>
             <img src="@Url.Content("~/images/volumebars.png")" alt="Buy/Sell Volume Bars Indicator" class="indicator-image">
             <div class="indicator-full-description">
-                <p></p>
+                <p>This indicator presents volume by time along with buy/sell pressure. It incorporates two adaptable metrics for establishing a baseline volume, offering insights through both a simple moving average and a median calculation. The median is meticulously computed from the "volumic metric length" of the last bars within a session, ensuring precise volume measurement across regular and extended trading hours. This innovative approach to volume analysis allows for a refined understanding of market dynamics.</p>
+                <ul>
+                    <li><strong>Show Volume Metric:</strong> Toggle to display or hide the volume metric.</li>
+                    <li><strong>Volume Metric Display:</strong> Choose between 'Line' or 'Bars' format for displaying the volume metric.</li>
+                    <li><strong>Volume Metric:</strong> Select the type of volume metric, either 'SMA' (Simple Moving Average) or 'Median'.</li>
+                    <li><strong>Volume Metric Length:</strong> Adjust the length for the volume metric calculation (range: 10 to 500).</li>
+                    <li><strong>Volume Median Session Data:</strong> Choose between 'Regular' and 'Extended' session data for the volume median calculation.</li>
+                    <li><strong>Only Show Regular Session Volume Median Higher Than Timeframe:</strong> Set the timeframe at which any greater timeframe only shows the regular session median, even over extended session bars.</li>
+                    <li><strong>Futures Regular Session:</strong> Define the time range for the futures regular session.</li>
+                    <li><strong>Buy/Sell Volume Colors:</strong> Customize the colors for buy and sell volume.</li>
+                    <li><strong>Volume Metric Bars & Line Colors:</strong> Choose colors for the volume metric bars and line.</li>
+                </ul>
                 <button disabled class="btn btn-primary indicator-purchase-btn">Purchase</button>
             </div>
         </div>
@@ -47,7 +56,14 @@
         <div>
             <img src="@Url.Content("~/images/vpaindicator.png")" alt="Volume Price Analysis Indicator" class="indicator-image">
             <div class="indicator-full-description">
-                <p>This indicator displays a volume profile (volume by price) that shows both cumulative volume and buy/sell pressure.</p>
+                <p>The VPA Indicator offers detailed insights into market dynamics by highlighting specific candlestick patterns, volume conditions, and critical price levels, facilitating a comprehensive understanding of potential market movements. This indicator is designed to pinpoint key trading opportunities through the identification of hammers, shooters, momentum candles, and dojis, coupled with a keen analysis of volume anomalies and precise automatic price level mappings for monthly, weekly, and daily intervals.</p>
+                <ul>
+                    <li><strong>Candlesticks:</strong> Identifies hammers (H), shooters (S), momentum candles (M), and dojis (D) for trend reversal or continuation signals.</li>
+                    <li><strong>Volume Conditions:</strong> Highlights high volume (+), high volume anomalies (A), and low volume anomalies (A) to signal momentum changes or traps.</li>
+                    <li><strong>Automatic Price Levels:</strong> Plots the previous and current high, low, and opening prints for monthly, weekly, and daily intervals with dotted lines in various thickness and colors.</li>
+                    <li><strong>Automatic Gaps:</strong> Marks gaps on the daily chart within a specified lookback length as a translucent white box.</li>
+                </ul>
+                <p>Configuration options allow for extensive customization to align with individual trading strategies, including show/hide options, volume thresholds, ATR settings, and more.</p>
                 <button disabled class="btn btn-primary indicator-purchase-btn">Purchase</button>
             </div>
         </div>
