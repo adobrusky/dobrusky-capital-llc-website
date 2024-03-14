@@ -26,8 +26,9 @@ body {
     flex-direction: column-reverse;
     text-align: center;
 
-    &.indicator-image, &.indicator-description {
-        width: 100%;
+    .indicator-image {
+        box-shadow: 2px 2px 10px $dark-gray;
+        max-width: 425px;
     }
 
     @media (min-width: 768px) {
@@ -57,7 +58,6 @@ body {
 
     @media (min-width: 768px) {
         width: 50%;
-        max-width: 400px;
     }
 }
 
@@ -336,11 +336,14 @@ section {
 
     .indicator-image {
         margin-top: 0px;
+        max-width: 425px;
+        box-shadow: 2px 2px 10px $dark-gray;
     }
 
     @media (min-width: 768px) {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     .indicator-full-description {
@@ -356,11 +359,11 @@ section {
 
         span {
             cursor: not-allowed;
+            margin-top: 10px;
         }
 
         .indicator-purchase-btn {
             width: 150px;
-            margin-top: 10px;
             font-weight: 600;
             background-color: $orange;
             color: white;
