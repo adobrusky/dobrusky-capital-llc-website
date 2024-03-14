@@ -40,9 +40,9 @@
             // Landing page parallax
             let st = $(this).scrollTop() + 1;
             if (st > lastScrollTop) {
-                $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
+                $('.landing-section').css('background-position', `center ${st * -0.15}px`);
             } else {
-                $('.landing-section').css('background-position', `0px ${st * -0.15}px`);
+                $('.landing-section').css('background-position', `center ${st * -0.15}px`);
             }
             lastScrollTop = st;
 
