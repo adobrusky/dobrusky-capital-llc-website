@@ -82,24 +82,34 @@ body {
     padding: 0% 10% 0% 10% !important;
   }
 }
-#navbar .navbar-nav .nav-item .nav-link {
-  position: relative;
+#navbar .navbar-nav .nav-item .nav-link.active {
+  color: rgb(246, 134, 51) !important;
+  font-weight: 600;
 }
-#navbar .navbar-nav .nav-item .nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #fff;
-  transition: width 0.5s ease;
-}
-#navbar .navbar-nav .nav-item .nav-link:hover:after, #navbar .navbar-nav .nav-item .nav-link:focus:after, #navbar .navbar-nav .nav-item .nav-link.active:after {
-  width: 100%;
-}
-#navbar .navbar-nav .nav-item .nav-link.active:after {
-  background-color: rgb(246, 134, 51);
+@media (min-width: 575px) {
+  #navbar .navbar-nav .nav-item .nav-link {
+    position: relative;
+  }
+  #navbar .navbar-nav .nav-item .nav-link.active {
+    color: white !important;
+    font-weight: 400;
+  }
+  #navbar .navbar-nav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease;
+  }
+  #navbar .navbar-nav .nav-item .nav-link:hover:after, #navbar .navbar-nav .nav-item .nav-link:focus:after, #navbar .navbar-nav .nav-item .nav-link.active:after {
+    width: 100%;
+  }
+  #navbar .navbar-nav .nav-item .nav-link.active:after {
+    background-color: rgb(246, 134, 51);
+  }
 }
 
 .landing-section {
@@ -177,9 +187,13 @@ section .container p {
   height: auto;
   box-shadow: 2px 2px 10px rgb(33, 37, 41);
 }
-.journal-content-wrapper a, .journal-content-wrapper a:hover, .journal-content-wrapper a:focus, .journal-content-wrapper a:visited {
-  color: rgb(246, 134, 51);
+.journal-content-wrapper a {
+  color: rgb(33, 37, 41);
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+.journal-content-wrapper a:hover, .journal-content-wrapper a:focus {
+  color: rgb(246, 134, 51);
 }
 @media (min-width: 768px) {
   .journal-content-wrapper {
@@ -258,11 +272,11 @@ section .container p {
   margin: 25px 0px 25px 0px;
 }
 .footer a.footer-link {
-  color: white;
+  color: white !important;
   transition: color 0.3s ease;
 }
 .footer a.footer-link:hover {
-  color: rgb(246, 134, 51);
+  color: rgb(246, 134, 51) !important;
 }
 .footer .footer-logo {
   max-height: 50px;
@@ -281,6 +295,9 @@ section .container p {
   justify-content: center;
   align-items: center;
 }
+.indicator-page-section > .container > div .indicator-image {
+  margin-top: 0px;
+}
 @media (min-width: 768px) {
   .indicator-page-section > .container > div {
     flex-direction: row;
@@ -291,8 +308,14 @@ section .container p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   margin-top: 15px;
+  font-size: 14px;
+}
+.indicator-page-section > .container > div .indicator-full-description > p {
+  font-size: 14px;
+}
+.indicator-page-section > .container > div .indicator-full-description span {
+  cursor: not-allowed;
 }
 .indicator-page-section > .container > div .indicator-full-description .indicator-purchase-btn {
   width: 150px;
@@ -302,7 +325,6 @@ section .container p {
   color: white;
   border: 1px solid rgb(246, 134, 51);
   transition: color ease 0.5s, background-color ease 0.5s;
-  cursor: not-allowed !important;
 }
 .indicator-page-section > .container > div .indicator-full-description .indicator-purchase-btn:hover, .indicator-page-section > .container > div .indicator-full-description .indicator-purchase-btn:focus {
   background-color: white;
@@ -316,4 +338,12 @@ section .container p {
     margin-left: 15px;
     margin-top: 0px;
   }
+}
+
+.privacy a {
+  color: rgb(33, 37, 41) !important;
+  transition: color 0.3s ease;
+}
+.privacy a:hover {
+  color: rgb(246, 134, 51) !important;
 }

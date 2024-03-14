@@ -90,26 +90,38 @@ body {
         padding: 0% 10% 0% 10% !important;
     }
 
-    .navbar-nav .nav-item .nav-link {
-        position: relative;
+    .navbar-nav .nav-item .nav-link.active {
+        color: $orange !important;
+        font-weight: 600;
+    }
 
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background-color: #fff;
-            transition: width 0.5s ease;
-        }
+    @media (min-width: 575px) {
+        .navbar-nav .nav-item .nav-link {
+            position: relative;
 
-        &:hover:after, &:focus:after, &.active:after {
-            width: 100%;
-        }
+            &.active {
+                color: white !important;
+                font-weight: 400;
+            }
 
-        &.active:after {
-            background-color: $orange;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background-color: #fff;
+                transition: width 0.5s ease;
+            }
+
+            &:hover:after, &:focus:after, &.active:after {
+                width: 100%;
+            }
+
+            &.active:after {
+                background-color: $orange;
+            }
         }
     }
 }
@@ -199,9 +211,14 @@ section {
         box-shadow: 2px 2px 10px $dark-gray;
     }
 
-    a, a:hover, a:focus, a:visited {
-        color: $orange;
+    a {
+        color: $dark-gray;
         font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover, &:focus {
+            color: $orange;
+        }
     }
 
     @media (min-width: 768px) {
@@ -289,11 +306,11 @@ section {
     }
 
     a.footer-link {
-        color: white;
+        color: white !important;
         transition: color 0.3s ease;
 
         &:hover {
-            color: $orange;
+            color: $orange !important;
         }
     }
 
@@ -317,6 +334,10 @@ section {
     justify-content: center;
     align-items: center;
 
+    .indicator-image {
+        margin-top: 0px;
+    }
+
     @media (min-width: 768px) {
         flex-direction: row;
         justify-content: space-between;
@@ -326,8 +347,12 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
         margin-top: 15px;
+        font-size: 14px;
+
+        & > p {
+            font-size: 14px;
+        }
 
         span {
             cursor: not-allowed;
@@ -355,6 +380,17 @@ section {
         @media (min-width: 768px) {
             margin-left: 15px;
             margin-top: 0px;
+        }
+    }
+}
+
+.privacy {
+    a {
+        color: $dark-gray !important;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $orange !important;
         }
     }
 }
