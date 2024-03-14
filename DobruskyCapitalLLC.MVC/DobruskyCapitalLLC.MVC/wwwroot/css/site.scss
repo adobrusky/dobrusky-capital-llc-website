@@ -329,6 +329,10 @@ section {
         text-align: center;
         margin-top: 15px;
 
+        span {
+            cursor: not-allowed;
+        }
+
         .indicator-purchase-btn {
             width: 150px;
             margin-top: 10px;
@@ -337,7 +341,6 @@ section {
             color: white;
             border: 1px solid $orange;
             transition: color ease .5s, background-color ease .5s;
-            cursor: not-allowed !important;
 
             &:hover, &:focus {
                 background-color: white;
