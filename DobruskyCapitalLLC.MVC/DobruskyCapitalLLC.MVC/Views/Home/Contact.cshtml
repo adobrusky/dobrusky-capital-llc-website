@@ -5,7 +5,13 @@
 <section class="bg-light p-5">
     <div class="container">
         <h2>Contact Us</h2>
-        <p>ViewBag.Message</p>
+        @{
+            if (ViewBag.Message != null)
+            {
+                string color = ViewBag.Success != null && (bool)ViewBag.Success ? "green" : "red";
+                <p style="color: @color">@ViewBag.Message</p>
+            }
+        }
         <form method="post" action="">
             <div class="mb-3">
                 <label for="FirstName" class="form-label">First Name</label>

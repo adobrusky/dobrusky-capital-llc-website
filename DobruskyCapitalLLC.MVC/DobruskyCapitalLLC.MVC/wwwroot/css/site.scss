@@ -15,6 +15,11 @@ body {
     transition: opacity ease .5s;
 }
 
+.fade-in {
+    transition: opacity ease-out 1s;
+    opacity: 0;
+}
+
 .indicator-row {
     display: flex;
     align-items: center;

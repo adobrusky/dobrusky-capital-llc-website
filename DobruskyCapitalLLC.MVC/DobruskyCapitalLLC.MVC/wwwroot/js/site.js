@@ -33,6 +33,23 @@
         });
     }
 
+    function fadeInElements() {
+        $('.fade-in').each(function (index) {
+            let $ind = $(this);
+
+            // Calculate a delay based on the element's index to stagger the animations
+            let delay = index * 100;
+
+            if (isElementInView($ind) && !$ind.hasClass('animated')) {
+                setTimeout(function () {
+                    $ind.css({
+                        opacity: '1'
+                    }).addClass('animated');
+                }, delay);
+            }
+        });
+    }
+
     function scrollLogic() {
         if (isHome) {
             animateElements();
@@ -53,6 +70,7 @@
                 $('#navbar').removeClass('scrolled-navbar');
             }
         }
+        fadeInElements();
     }
     scrollLogic();
     $(window).scroll(function () {

@@ -61,13 +61,8 @@ namespace DobruskyCapitalLLC.MVC.Controllers
             try
             {
                 bool emailSent = _emailHelper.SendEmail("dobruskycapital@gmail.com", "Contact Us Submission", $"Name: {firstName} {lastName}\nEmail: {email}\nMessage: {message}");
-                if (emailSent)
-                {
-                    ViewBag.Message = "Email sent successfully!";
-                } else
-                {
-                    ViewBag.Message = "Failed to send email.";
-                }
+                ViewBag.Message = emailSent ? "Email sent successfully!" : "Failed to send email.";
+                ViewBag.Success = emailSent;
                 return View();
             }
             catch (Exception)
