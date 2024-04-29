@@ -32,18 +32,20 @@
             <img src="@Url.Content("~/images/volumebars2.png")" alt="Buy/Sell Volume Bars Indicator" class="indicator-image">
             <div class="indicator-full-description">
                 <p>
-                    This indicator displays volume by time along with buy/sell pressure.
+                    This indicator displays volume by time with buy/sell pressure.
                     It features two customizable metrics to gauge a baseline volume: a simple moving average and a proprietary "baseline" metric.
                     The following properties of the indicator are customizable:
                 </p>
                 <ul>
                     <li><strong>Show Volume Metric:</strong> Toggle to display or hide the volume metric.</li>
+                    <li><strong>Show High Volume:</strong> Toggle to display or hide the high volume indications (!).</li>
                     <li><strong>Volume Metric Display:</strong> Choose between 'Line' or 'Bars' format for displaying the volume metric.</li>
                     <li><strong>Volume Metric:</strong> Select the type of volume metric, either 'SMA' (Simple Moving Average) or the proprietary 'Baseline'.</li>
                     <li><strong>Volume Metric Length:</strong> Adjust the length for the volume metric calculation (range: 10 to 500).</li>
                     <li><strong>Volume Median Session Data:</strong> Choose between 'Regular' and 'Extended' session data for the volume median calculation.</li>
                     <li><strong>Only Use Regular Session Volume Data Greater Than Timeframe:</strong> Set the timeframe at which any greater timeframe only shows the regular session baseline, even over extended session bars.</li>
                     <li><strong>Futures Regular Session:</strong> Define the time range for the futures regular session.</li>
+                    <li><strong>High Volume Threshold:</strong> Define the threshold for determing high volume (2x the metric by default).</li>
                 </ul>
                 <span><button disabled class="btn btn-primary indicator-purchase-btn">Access</button></span>
             </div>
@@ -61,7 +63,7 @@
                 <p>This indicator was built around the concept of <a href="https://www.amazon.com/Complete-Guide-Price-Analysis/dp/1491249390" target="_blank">volume price analysis</a> (VPA). It highlights important price action conditions, volume conditions, and price levels that can provide insights into potential market structure and direction. It is tailored specifically for intraday trading, but can be used on all timeframes.</p>
                 <ul>
                     <li><strong>Candlesticks:</strong> Identifies hammers (H), shooters (S), momentum candles (M), and dojis (D) to indicate potential trend reversal or continuation.</li>
-                    <li><strong>Volume Conditions:</strong> Highlights high volume (+), high volume anomalies (A), and low volume anomalies (A).</li>
+                    <li><strong>Volume Conditions:</strong> Highlights high volume (!), high volume anomalies (A), and low volume anomalies (A).</li>
                     <li><strong>Automatic Price Levels:</strong> Plots the previous month, week, and day high/low as well as the current month, week, and day opening prints with dotted lines in various thickness and colors. Additionally, yearly, monthly, weekly, and daily fibonacci pivot levels are plotted as solid pink lines in various thickness.</li>
                     <li><strong>Automatic Gaps:</strong> Plots gaps on the daily chart within a specified lookback period as a translucent white box.</li>
                 </ul>
