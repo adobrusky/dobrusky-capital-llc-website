@@ -13,6 +13,9 @@ body {
     font-family: 'Calibri', Arial, Helvetica, sans-serif;
     opacity: 0;
     transition: opacity ease .5s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .fade-in {
@@ -235,6 +238,28 @@ section {
     }
 }
 
+.styled-btn.btn.btn-primary {
+    border-radius: 999px 999px;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    margin-top: 10px;
+    font-weight: 600;
+    background-color: $orange;
+    color: white;
+    border: 1px solid $orange;
+    transition: color ease .5s, background-color ease .5s, opacity ease-out .5s, transform ease-out .5s;
+
+    &:hover, &:focus {
+        background-color: white;
+        color: $orange;
+    }
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
 .email-signup {
     display: flex;
     flex-direction: column;
@@ -251,30 +276,11 @@ section {
         flex-direction: column;
         align-items: center;
 
-        input, .btn {
+        input {
             border-radius: 999px 999px;
             width: 300px;
             font-size: 15px;
             height: 40px;
-        }
-
-        .btn.btn-primary {
-            width: 150px;
-            margin-top: 10px;
-            font-weight: 600;
-            background-color: $orange;
-            color: white;
-            border: 1px solid $orange;
-            transition: color ease .5s, background-color ease .5s;
-
-            &:hover, &:focus {
-                background-color: white;
-                color: $orange;
-            }
-
-            &:focus {
-                outline: none !important;
-            }
         }
 
         @media (min-width: 768px) {
@@ -298,6 +304,7 @@ section {
     color: white;
     line-height: initial !important;
     justify-content: space-around !important;
+    margin-top: auto;
     position: relative !important;
     padding-top: 20px !important;
 
@@ -399,4 +406,32 @@ section {
             color: $orange !important;
         }
     }
+}
+
+.contact-name-container {
+    display: flex;
+    flex-direction: column;
+
+    .mb-3 {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .mb-3 {
+            width: 49%;
+        }
+    }
+}
+
+.contact-section {
+    @media (min-width: 1068px) {
+        width: 55%;
+    }
+}
+
+.slide-in {
+    transition: opacity ease-out .5s, transform ease-out .5s;
 }

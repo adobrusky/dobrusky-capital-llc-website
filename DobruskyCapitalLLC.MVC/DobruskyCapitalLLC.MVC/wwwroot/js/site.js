@@ -32,6 +32,24 @@
             }
         });
     }
+    function animateFormElements() {
+        let $emailInput = $('#emailInput');
+        if (isElementInView($emailInput) && !$emailInput.hasClass('animated')) {
+            $emailInput.css({
+                opacity: 1,
+                transform: "translateX(0%)"
+            }).addClass('animated');
+        }
+
+        let $button = $('.styled-btn.slide-in');
+        if (isElementInView($button) && !$button.hasClass('animated')) {
+            $button.css({
+                opacity: 1,
+                transform: "translateX(0%)"
+            }).addClass('animated');
+        }
+    }
+
 
     function fadeInElements() {
         $('.fade-in').each(function (index) {
@@ -53,6 +71,7 @@
     function scrollLogic() {
         if (isHome) {
             animateElements();
+            animateFormElements();
 
             // Landing page parallax
             let st = $(this).scrollTop() + 1;

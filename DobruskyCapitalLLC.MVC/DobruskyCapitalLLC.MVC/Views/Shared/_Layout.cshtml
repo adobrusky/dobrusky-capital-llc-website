@@ -5,47 +5,56 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png">
+    <link rel="manifest" href="~/site.webmanifest">
+    <link rel="mask-icon" href="~/safari-pinned-tab.svg" color="#404040">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>@ViewData["Title"] | Dobrusky Capital LLC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DobruskyCapitalLLC.MVC.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 fixed-top @Html.HasScrollingNavbarTransition("Home", "Index")">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="@Url.Content("~/images/logo.png")" alt="Dobrusky Capital LLC Logo" style="height: 70px; margin-right: 10px; background-color:transparent;">
-                    Dobrusky Capital LLC
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link text-light @Html.IsActive("Home", "Index")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light @Html.IsActive("Home", "Indicators")" asp-area="" asp-controller="Home" asp-action="Indicators">Indicators</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" target="_blank" href="https://www.amazon.com/Dobrusky-Capital-90-Day-Trading-Journal/dp/B0CPY3FJ39">Journal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light @Html.IsActive("Home", "Contact")" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-                        </li>
-                    </ul>
+<body class="bg-light">
+    <div id="content">
+        <header>
+            <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 fixed-top @Html.HasScrollingNavbarTransition("Home", "Index")">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="@Url.Content("~/images/logo.png")" alt="Dobrusky Capital LLC Logo" style="height: 70px; margin-right: 10px; background-color:transparent;">
+                        Dobrusky Capital LLC
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1 justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link text-light @Html.IsActive("Home", "Index")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light @Html.IsActive("Home", "Indicators")" asp-area="" asp-controller="Home" asp-action="Indicators">Indicators</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" target="_blank" href="https://www.amazon.com/Dobrusky-Capital-90-Day-Trading-Journal/dp/B0CPY3FJ39">Journal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light @Html.IsActive("Home", "Contact")" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <div>
-        <main role="main">
-            @RenderBody()
-        </main>
+        <div>
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
     </div>
 
     <footer class="footer bg-dark text-light py-3">

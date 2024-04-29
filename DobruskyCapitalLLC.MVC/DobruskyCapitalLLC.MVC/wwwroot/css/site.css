@@ -8,6 +8,9 @@ body {
   font-family: "Calibri", Arial, Helvetica, sans-serif;
   opacity: 0;
   transition: opacity ease 0.5s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .fade-in {
@@ -209,6 +212,26 @@ section a:hover, section a:focus, section a:visited:hover, section a:visited:foc
   }
 }
 
+.styled-btn.btn.btn-primary {
+  border-radius: 999px 999px;
+  font-size: 15px;
+  height: 40px;
+  width: 150px;
+  margin-top: 10px;
+  font-weight: 600;
+  background-color: rgb(246, 134, 51);
+  color: white;
+  border: 1px solid rgb(246, 134, 51);
+  transition: color ease 0.5s, background-color ease 0.5s, opacity ease-out 0.5s, transform ease-out 0.5s;
+}
+.styled-btn.btn.btn-primary:hover, .styled-btn.btn.btn-primary:focus {
+  background-color: white;
+  color: rgb(246, 134, 51);
+}
+.styled-btn.btn.btn-primary:focus {
+  outline: none !important;
+}
+
 .email-signup {
   display: flex;
   flex-direction: column;
@@ -224,27 +247,11 @@ section a:hover, section a:focus, section a:visited:hover, section a:visited:foc
   flex-direction: column;
   align-items: center;
 }
-.email-signup div input, .email-signup div .btn {
+.email-signup div input {
   border-radius: 999px 999px;
   width: 300px;
   font-size: 15px;
   height: 40px;
-}
-.email-signup div .btn.btn-primary {
-  width: 150px;
-  margin-top: 10px;
-  font-weight: 600;
-  background-color: rgb(246, 134, 51);
-  color: white;
-  border: 1px solid rgb(246, 134, 51);
-  transition: color ease 0.5s, background-color ease 0.5s;
-}
-.email-signup div .btn.btn-primary:hover, .email-signup div .btn.btn-primary:focus {
-  background-color: white;
-  color: rgb(246, 134, 51);
-}
-.email-signup div .btn.btn-primary:focus {
-  outline: none !important;
 }
 @media (min-width: 768px) {
   .email-signup div {
@@ -265,6 +272,7 @@ section a:hover, section a:focus, section a:visited:hover, section a:visited:foc
   color: white;
   line-height: initial !important;
   justify-content: space-around !important;
+  margin-top: auto;
   position: relative !important;
   padding-top: 20px !important;
 }
@@ -352,4 +360,31 @@ section a:hover, section a:focus, section a:visited:hover, section a:visited:foc
 }
 .privacy a:hover {
   color: rgb(246, 134, 51) !important;
+}
+
+.contact-name-container {
+  display: flex;
+  flex-direction: column;
+}
+.contact-name-container .mb-3 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .contact-name-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contact-name-container .mb-3 {
+    width: 49%;
+  }
+}
+
+@media (min-width: 1068px) {
+  .contact-section {
+    width: 55%;
+  }
+}
+
+.slide-in {
+  transition: opacity ease-out 0.5s, transform ease-out 0.5s;
 }
