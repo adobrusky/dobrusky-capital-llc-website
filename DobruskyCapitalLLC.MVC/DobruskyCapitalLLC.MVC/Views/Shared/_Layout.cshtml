@@ -48,6 +48,17 @@
                     </div>
                 </div>
             </nav>
+
+            @{
+                if (ViewBag.Message != null)
+                {
+                    var alertType = ViewBag.Success != null && (bool)ViewBag.Success ? "alert-success" : "alert-danger";
+                    <div id="alert" class="alert @alertType alert-dismissible fade show" role="alert">
+                        @ViewBag.Message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+            }
         </header>
 
         <div>

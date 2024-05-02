@@ -238,7 +238,13 @@ section {
     }
 }
 
-.styled-btn.btn.btn-primary {
+.styled-btn.btn.btn-primary {    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: absolute; */
+    margin-top: 30px;
+    /* opacity: 1; */
     border-radius: 999px 999px;
     font-size: 15px;
     height: 40px;
@@ -434,4 +440,23 @@ section {
 
 .slide-in {
     transition: opacity ease-out .5s, transform ease-out .5s;
+}
+
+#alert {
+    width: 90%;
+    text-align: center;
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    box-shadow: 1px 1px 7px black;
+
+    @media (min-width: 768px) {
+        width: 70%;
+    }
+
+    @media (min-width: 1068px) {
+        width: 35%;
+    }
 }

@@ -1,4 +1,6 @@
-﻿using DobruskyCapitalLLC.MVC.Models;
+﻿using DobruskyCapitalLLC.MVC.DataModels;
+using DobruskyCapitalLLC.MVC.Managers.MailingListManager;
+using DobruskyCapitalLLC.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Net.Mail;
@@ -8,12 +10,15 @@ namespace DobruskyCapitalLLC.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly EmailHelper _emailHelper;
+        private readonly MailingListManager _mailingListManager;
         private readonly ILogger<HomeController> _logger;
+        private readonly string errorMessage = "Something went wrong and we couldn't process your request. Please try again or contact our support team if the problem persists.";
 
-        public HomeController(ILogger<HomeController> logger, EmailHelper emailHelper)
+        public HomeController(ILogger<HomeController> logger, EmailHelper emailHelper, MailingListManager mailingListManager)
         {
             _logger = logger;
             _emailHelper = emailHelper;
+            _mailingListManager = mailingListManager;
         }
 
         public IActionResult Index()
@@ -26,15 +31,23 @@ namespace DobruskyCapitalLLC.MVC.Controllers
         {
             try
             {
+                // send email
                 bool emailSent = _emailHelper.SendEmail(email, "Thank You", "Thanks for signing up to our email list!");
-                // also save email to db here
-                if (emailSent)
+                // add email to mailing list
+                MailingListEmail? emailRecord = _mailingListManager.GetEmailRecordByEmail(email);
+                if (emailRecord == null)
                 {
-                    ViewBag.Message = "Email sent successfully! You should get a confirmation email shortly.";
+                    emailSent = emailSent && _mailingListManager.AddEmailRecord(email);
+                }
+                if (emailSent && !string.Equals(email, "throwerror@test.com"))
+                {
+                    ViewBag.Message = "Success! Please check your email shortly for your free educational material and sample of the journal.";
+                    ViewBag.Success = true;
                 }
                 else
                 {
-                    ViewBag.Message = "Failed to send email. Please try again.";
+                    ViewBag.Message = errorMessage;
+                    ViewBag.Success = false;
                 }
                 return View();
             }
@@ -61,8 +74,16 @@ namespace DobruskyCapitalLLC.MVC.Controllers
             try
             {
                 bool emailSent = _emailHelper.SendEmail("dobruskycapital@gmail.com", "Contact Us Submission", $"Name: {firstName} {lastName}\nEmail: {email}\nMessage: {message}");
-                ViewBag.Message = emailSent ? "Email sent successfully!" : "Failed to send email.";
-                ViewBag.Success = emailSent;
+                if (emailSent && !string.Equals(email, "throwerror@test.com"))
+                {
+                    ViewBag.Message = "Message sent successfully! Expect a response within 1-2 business days.";
+                    ViewBag.Success = true;
+                }
+                else
+                {
+                    ViewBag.Message = errorMessage;
+                    ViewBag.Success = false;
+                }
                 return View();
             }
             catch (Exception)
