@@ -32,14 +32,14 @@ namespace DobruskyCapitalLLC.MVC.Controllers
             try
             {
                 // send email
-                bool emailSent = _emailHelper.SendEmail(email, "Thank You", "Thanks for signing up to our email list!");
-                // add email to mailing list
+                bool emailSent = !string.Equals(email, "throwerror@test.com") && _emailHelper.SendEmail(email, "Thank You", "Thanks for signing up to our email list!");
+                // add email to mailing list if not already there
                 MailingListEmail? emailRecord = _mailingListManager.GetEmailRecordByEmail(email);
                 if (emailRecord == null)
                 {
-                    emailSent = emailSent && _mailingListManager.AddEmailRecord(email);
+                    _mailingListManager.AddEmailRecord(email);
                 }
-                if (emailSent && !string.Equals(email, "throwerror@test.com"))
+                if (emailSent)
                 {
                     ViewBag.Message = "Success! Please check your email shortly for your free educational material and sample of the journal.";
                     ViewBag.Success = true;
@@ -73,8 +73,8 @@ namespace DobruskyCapitalLLC.MVC.Controllers
         {
             try
             {
-                bool emailSent = _emailHelper.SendEmail("dobruskycapital@gmail.com", "Contact Us Submission", $"Name: {firstName} {lastName}\nEmail: {email}\nMessage: {message}");
-                if (emailSent && !string.Equals(email, "throwerror@test.com"))
+                bool emailSent = !string.Equals(email, "throwerror@test.com") && _emailHelper.SendEmail("dobruskycapital@gmail.com", "Contact Us Submission", $"Name: {firstName} {lastName}\nEmail: {email}\nMessage: {message}");
+                if (emailSent)
                 {
                     ViewBag.Message = "Message sent successfully! Expect a response within 1-2 business days.";
                     ViewBag.Success = true;

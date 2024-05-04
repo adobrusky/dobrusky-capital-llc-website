@@ -1,17 +1,6 @@
 using DobruskyCapitalLLC.MVC.Managers.MailingListManager;
-using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Path to store keys
-string keysFolder = Path.Combine(builder.Environment.ContentRootPath, "DataProtection-Keys");
-if (!Directory.Exists(keysFolder))
-{
-    Directory.CreateDirectory(keysFolder);
-}
-
-builder.Services.AddDataProtection()
-    .PersistKeysToFileSystem(new DirectoryInfo(keysFolder));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

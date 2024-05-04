@@ -1,19 +1,11 @@
--- Create mailing list table to store emails
-CREATE TABLE mailingList (
-    emailID INT AUTO_INCREMENT,
-    email VARCHAR(255) NOT NULL,
-    createdOnUTCDateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (emailID),
-    UNIQUE KEY (email)
-);
+-- Create database for Dobrusky Capital LLC
+CREATE DATABASE DobruskyCapital_LLC;
 
--- Create contacts table to store contact information
-CREATE TABLE contacts (
-    contactID INT AUTO_INCREMENT,
-    firstName VARCHAR(255),
-    lastName VARCHAR(255),
-    email VARCHAR(255) NOT NULL,
-    createdOnUTCDateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (contactID),
-    UNIQUE KEY (email)
+-- Create mailing list table to store emails
+CREATE TABLE MailingList (
+    EmailID INT IDENTITY(1,1),
+    Email VARCHAR(255) NOT NULL,
+    CreatedOnUTCDateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (EmailID),
+    UNIQUE (Email)
 );
